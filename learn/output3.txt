@@ -1,0 +1,1072 @@
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var checkflag = "false";
+function check(field) {
+if (checkflag == "false") {
+for (i = 0; i < field.length; i++) {
+field[i].checked = true;}
+checkflag = "true";
+return "取消全选"; }
+else {
+for (i = 0; i < field.length; i++) {
+field[i].checked = false; }
+checkflag = "false";
+return "开始全选"; }
+}
+//  End -->
+var checkflag = "false";
+function checkadmin(field) {
+if (checkflag == "false") {
+for (i = 0; i < field.length; i++) {
+field[i].checked = true;}
+checkflag = "true";
+return "NO"; }
+else {
+for (i = 0; i < field.length; i++) {
+field[i].checked = false; }
+checkflag = "false";
+return "YES"; }
+}
+</script>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<TITLE>天津相亲_征婚,相亲网站,相亲群,交友,婚介</TITLE>
+<META name=Description content="天津相亲网,是天天相亲网旗下分站，为本地单身男女提供网上相亲交友征婚服务。相亲找对象请访问相亲网。">
+<META name=Keywords content="相亲网,征婚,相亲网站,同城相亲,同城交友,交友网">
+
+<link rel="stylesheet" href="/index_img/css/import.css" />
+<link rel="stylesheet" href="/index_img/css/oe_varpop.css" />
+<script type='text/javascript'>
+var _ROOT_PATH = "";
+</script>
+<script type='text/javascript' src='/js/news/jquery.min.js'></script>
+<script type='text/javascript' src='/js/news/main.js'></script>
+<script type="text/javascript" src='/js/news/avatar.js'></script>
+<script type="text/javascript" src='/js/news/jquery.artDialog.source.js?skin=default'></script>
+<script type="text/javascript" src='/js/news/iframeTools.js'></script>
+<script type='text/javascript' src='/js/news/artbox.js'></script>
+<script type='text/javascript' src='/js/news/ajax.js'></script>
+<script type='text/javascript' src='/js/news/ajax.roll.js'></script>
+<script type="text/javascript" src="/js/news/jquery.slide.js"></script>
+<script type="text/javascript" src="/js/news/tips.min.js"></script>
+<script type="text/javascript"  src="/js/news/oe_varpop.js"></script>
+<script type="text/javascript" src="/js/news/jquery.SuperSlide.2.1.1.js"></script>
+</head>
+<body>
+<style type="text/css">
+
+.oe_userlist_widget .oe_userlist_layout dl {
+    color: #333;
+    float: left;
+    height: 185px;
+    overflow: hidden;
+    width: 333px !important;
+}
+.oe_userlist_widget .oe_userlist_layout dl dd {
+    float: left;
+    height: 147px;
+    padding-left: 15px;
+    width: 194px !important;
+}
+</style>
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="27" bgcolor="#EFEFEF"><table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>相亲网提倡真诚征婚相亲,谢绝不诚心相亲者注册,打造真实有效的相亲网站。</td>
+            </tr>
+          </table></td>
+        </tr>
+</table>
+
+
+<div class="oe_top">
+  <div class="oe_top_con">
+    <div class="oe_top_logo">
+	  <a href="http://www.xiangqinwang.cn"><img  src="/images/xiangqin.png" alt="相亲" border="0" /></a>
+    </div>
+    <div class="logo_mid">
+      <div class="logo_city_none" id="city_header">
+        <div id="defaultcity"> 
+           
+           
+          全部 
+           
+           
+        </div>
+        <span class="logo_inner"><a href="###" onclick="change_city(1);">选择地区<img src="/images/home/area.gif" /></a></span> 
+	  </div>
+      <div class="logo_allcity" id="city_box">
+        <h3><a href="###" onclick="change_city(0);"><img src="/images/home/area_close.gif" />关闭</a></h3>
+        <ul class="city_list">
+        <li> 
+		    <span>热门：</span> 
+            <a href="/fenzhan.asp?sheng=北京">北京</a>&nbsp;|&nbsp;<a href="/fenzhan.asp?sheng=上海">上海</a>&nbsp;|&nbsp;<a href="/fenzhan.asp?sheng=天津">天津</a>&nbsp;|&nbsp;<a href="/fenzhan.asp?sheng=河北">河北</a>&nbsp;|&nbsp;<a href="/fenzhan.asp?sheng=广东">广东</a>&nbsp;|&nbsp;<a href="/fenzhan.asp?sheng=海南">海南</a>&nbsp;|&nbsp;<a href="/fenzhan.asp?sheng=山东">山东</a>&nbsp;|&nbsp;<a href="/fenzhan.asp?sheng=福建">福建</a>&nbsp;|&nbsp; 
+          </li>
+           <li> 
+		    <span>
+<a href="/zhejiang/" target="_blank">浙江</a>：</span>
+
+
+<a href="/fenzhan.asp?sheng=浙江&shi=杭州">杭州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=浙江&shi=宁波">宁波</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=浙江&shi=温州">温州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=浙江&shi=嘉兴">嘉兴</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=浙江&shi=湖州">湖州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=浙江&shi=绍兴">绍兴</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=浙江&shi=金华">金华</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=浙江&shi=衢州">衢州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=浙江&shi=舟山">舟山</a>
+
+</li>
+ <li> 
+		    <span>
+<a href="/jiangsu/" target="_blank">江苏</a>：</span>
+
+
+<a href="/fenzhan.asp?sheng=江苏&shi=南京">南京</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=江苏&shi=无锡">无锡</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=江苏&shi=徐州">徐州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=江苏&shi=常州">常州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=江苏&shi=苏州">苏州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=江苏&shi=南通">南通</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=江苏&shi=连云港">连云港</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=江苏&shi=淮安">淮安</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=江苏&shi=盐城">盐城</a>
+
+</li>
+ <li> 
+		    <span>
+<a href="/guangdong/" target="_blank">广东</a>：</span>
+
+
+<a href="/fenzhan.asp?sheng=广东&shi=广州">广州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=广东&shi=韶关">韶关</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=广东&shi=深圳">深圳</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=广东&shi=珠海">珠海</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=广东&shi=汕头">汕头</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=广东&shi=佛山">佛山</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=广东&shi=江门">江门</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=广东&shi=湛江">湛江</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=广东&shi=茂名">茂名</a>
+
+</li>
+ <li> 
+		    <span>
+<a href="/fujian/" target="_blank">福建</a>：</span>
+
+
+<a href="/fenzhan.asp?sheng=福建&shi=福州">福州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=福建&shi=厦门">厦门</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=福建&shi=莆田">莆田</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=福建&shi=三明">三明</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=福建&shi=泉州">泉州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=福建&shi=漳州">漳州</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=福建&shi=南平">南平</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=福建&shi=龙岩">龙岩</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=福建&shi=宁德">宁德</a>
+
+</li>
+ <li> 
+		    <span>
+<a href="/shandong/" target="_blank">山东</a>：</span>
+
+
+<a href="/fenzhan.asp?sheng=山东&shi=济南">济南</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=山东&shi=青岛">青岛</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=山东&shi=淄博">淄博</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=山东&shi=枣庄">枣庄</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=山东&shi=东营">东营</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=山东&shi=烟台">烟台</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=山东&shi=潍坊">潍坊</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=山东&shi=济宁">济宁</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=山东&shi=泰安">泰安</a>
+
+</li>
+ <li> 
+		    <span>
+<a href="/hebei/" target="_blank">河北</a>：</span>
+
+
+<a href="/fenzhan.asp?sheng=河北&shi=石家庄">石家庄</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=河北&shi=唐山">唐山</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=河北&shi=秦皇岛">秦皇岛</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=河北&shi=邯郸">邯郸</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=河北&shi=邢台">邢台</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=河北&shi=保定">保定</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=河北&shi=张家口">张家口</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=河北&shi=承德">承德</a>
+
+&nbsp;|&nbsp;
+
+<a href="/fenzhan.asp?sheng=河北&shi=沧州">沧州</a>
+
+</li>
+
+          
+                    
+        </ul>
+        <div style="clear:both;"></div>
+        <h4><a href="/map.asp">更多&gt;&gt;</a></h4>
+      </div>
+    </div>
+	<!--//logo_mid End-->
+
+   <div class="oe_top_menu">
+  <ul>
+  	<li><a href="/">首页</a></li>
+	<li><a href="/blog.html">博文</a></li>
+	<li><a href="/zhenghun.html">男士</a></li>
+  	<li><a href="/jiaoyou.html">女士</a>
+	<img src="/images/home/l39_hot.gif" class="hot"/></li>
+	<li><a href="/dynamic_list.html">动态</a>
+ </li>
+  	<li><a href="/jiaoyou_pay_vip.asp">升级VIP</a></li>
+  	<li f="show">
+      <a>更多</a> <i></i>
+      <div id="show" style="display:none;">
+        <span></span>
+        <a href="/tuijian.html">推荐</a>
+        <a href="/newslist.html">公告</a>
+        <a href="/yuehui.html">约会信息</a>
+        <a href="/xiuxiu.html">秀秀</a>
+   
+        <a href="/jiaoyou_photo.asp">会员相册</a>
+		<a href="/jiaoyou_Search.asp">交友搜索</a>
+        
+		<a href="/help/about.html">求  助</a> 
+       
+          </div>
+    </li>
+    <div class="clear"></div>
+  </ul>
+  <div class="clear"></div>
+   
+  <div class="oe_l39_down" f="show">
+     
+    <label><a onClick="artbox_loginbox();" href="###"><img src="/images/home/l39_menu_userhead.png" alt="" /></a></label> <i></i>
+     
+    <div id="show" style="display:none;">
+      <span></span>
+      
+       
+      <a onClick="artbox_loginbox();" href="###">登录</a>
+      <a href="/register.asp">注册</a>
+        </div>
+  </div>
+  
+</div>
+<script type="text/javascript">
+  $(function(){
+	$("[f='show']").bind("mouseover", function(){ //鼠标经过
+		$(this).addClass("currentd");
+		$(this).children("#show").show();
+	});
+	$("[f='show']").bind("mouseout", function(){ //鼠标离开
+		$(this).removeClass("currentd");
+		$(this).children("#show").hide();
+	});
+});
+</script>
+
+    <div class="oe_top_tel" style="display:none;">
+	  <img src="/tpl/templets/orange/images/ys1.jpg" />
+	  请您在交友过程中保持谨慎，并认真审核会员的个人信息。
+
+       
+      <img src="/tpl/templets/orange/images/a43.png" /><a onClick="artbox_loginbox();" href="###">登录</a><i>|</i><a href="/passport/reg.html">注册</a>
+       
+
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".oe_less").mouseover(function(){
+		$(this).children().stop().show();
+	});
+	$(".oe_less").mouseout(function(){
+		$(this).children(".oe_tool").hide();
+	});
+})
+</script> 
+<script type="text/javascript">
+function change_city(a){
+	if (a == 1) {
+		$("#city_header").removeClass("logo_city_none").addClass("logo_city_current");
+		$("#city_box").show("slow");
+	}
+	else {
+		$("#city_header").removeClass("logo_city_current").addClass("logo_city_none");
+		$("#city_box").hide("slow");
+	}
+}
+</script>
+
+
+
+<div class="oe_index_widget">
+  <div class="oe_index_tag">
+    <h2><i></i>我要找</h2>
+    <DIV class=oe_search_index>
+<script type="text/javascript" src="js/jquery.cityselect.js"></script>
+<FORM method=post name="form1" id="form1" action=/search_list.asp>
+<DIV>
+  <div align="left" id="city_3">
+    年龄：
+  <select name="age" id="age" class="search_Select" style="font-size:9pt;color="#FF0099"">
+    <option value="1" selected>18-20岁</option>
+    <option value="2" selected>21-25岁</option>
+    <option value="3" selected>26-30岁</option>
+    <option value="4" selected>31-35岁</option>
+    <option value="5" selected>36岁以上</option>
+    <option value="6" selected>无所谓</option>
+  </select>
+   
+  &nbsp;地区：
+   <select class="prov" name="sheng"></select> 
+                    <select class="city" disabled="disabled" name="shi"></select>
+                    <select class="dist" disabled="disabled" name="quyu"></select>
+                
+                
+ 
+	  
+      		<script language="javascript">
+			<!--
+ $(function() {
+                $("#city_3").citySelect({
+					
+					 prov: "tianjin",
+                    city: "hexi",
+                    dist: "",
+                    nodata: "none",
+					required: false
+					
+                });
+                              
+            });
+
+-->
+</script>
+    &nbsp;      
+    <input type="checkbox" name="photo" value="yes" />   
+    <input type="hidden" name="submitok" value="b" />
+    有照片&nbsp;&nbsp; 
+    <input name="sex" type="radio" value="男" checked="checked" />   
+    <img src="/images/man.gif" width="13" height="18" hspace="1" vspace="1" /><font color="#666666">男</font>   
+          <input name="sex" type="radio" value="女" checked="checked" />			
+    <img src="/images/women.gif" width="13" height="17" hspace="1" vspace="1" align="absmiddle" /><font color="#FF6699">女</font> 
+    <INPUT style="VERTICAL-ALIGN: middle" 
+src="/index_img/89.jpg" type=image>
+    &nbsp;&nbsp;&nbsp;<A 
+href="/jiaoyou_Search.asp">高级搜索</A> 
+  </div>
+</DIV></FORM></DIV>
+    
+  </div>
+  <div class="oe_main">
+  <div class="oe_userlist_widget">
+    <div class="oe_userlist_tag">
+      <h2>
+        <div class="oe_orderby">
+          <a href="/fenzhan.asp?sheng=天津&shi=&quyu=&s_order=0&s_sex=0" 
+		  class="current">默认排序</a>
+          <a href="/fenzhan.asp?sheng=天津&shi=&quyu=&s_order=2&s_sex=0" >最近登录</a>
+		  <a href="/fenzhan.asp?sheng=天津&shi=&quyu=&s_order=1&s_sex=0" >最新注册</a>
+          <a href="/fenzhan.asp?sheng=天津&shi=&quyu=&s_order=0&s_sex=1" >女会员</a>
+          <a href="/fenzhan.asp?sheng=天津&shi=&quyu=&s_order=0&s_sex=2" >男会员</a>
+                    
+                  </div>
+      </h2>
+      
+    </div>
+
+    <link rel="stylesheet" href="/tpl/templets/orange/css/append.css">
+    <div id="rank_data"></div>
+    <div class="oe_userlist_layout">
+    
+	        	  <dl>
+	    <dt><a href="/user/26756.html" target="_blank">
+<img src="/photo/m26756_6960.jpg">
+</a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/26756.html" target="_blank">小紫</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    25岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;166<br>天津&nbsp;&nbsp;  &nbsp;&nbsp;本科&nbsp;&nbsp;职员
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=小紫">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=小紫&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/26436.html" target="_blank"><img  src=/images/gender_1.gif></a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/26436.html" target="_blank">蟑螂</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    24岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;175<br>天津&nbsp;&nbsp;  河东&nbsp;&nbsp;中专&nbsp;&nbsp;职员
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=蟑螂">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=蟑螂&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/26230.html" target="_blank">
+<img src="/photo/m26230_4666.jpg">
+</a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/26230.html" target="_blank">迷人的眼神</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    31岁  &nbsp;&nbsp;离异&nbsp;&nbsp;178<br>天津&nbsp;&nbsp;  蓟县&nbsp;&nbsp;本科&nbsp;&nbsp;工人
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=迷人的眼神">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=迷人的眼神&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/26173.html" target="_blank"><img  src=/images/gender_1.gif></a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/26173.html" target="_blank">雪莲</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    41岁  &nbsp;&nbsp;离异&nbsp;&nbsp;173<br>天津&nbsp;&nbsp;  和平&nbsp;&nbsp;本科&nbsp;&nbsp;干部
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=雪莲">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=雪莲&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/26019.html" target="_blank"><img  src=/images/gender_1.gif></a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/26019.html" target="_blank">yth</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    19岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;169<br>天津&nbsp;&nbsp;  &nbsp;&nbsp;中专&nbsp;&nbsp;其他
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=yth">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=yth&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/25605.html" target="_blank">
+<img src="/photo/25605_1.jpg">
+</a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/25605.html" target="_blank">没有名字</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    25岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;165<br>天津&nbsp;&nbsp;  滨海新区&nbsp;&nbsp;本科&nbsp;&nbsp;销售
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=没有名字">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=没有名字&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/25529.html" target="_blank">
+<img src="/photo/25529_1.jpg">
+</a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/25529.html" target="_blank">小旗</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    24岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;1.75<br>天津&nbsp;&nbsp;  北辰&nbsp;&nbsp;高中&nbsp;&nbsp;餐饮
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=小旗">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=小旗&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/25492.html" target="_blank">
+<img src="/photo/25492_1.jpg">
+</a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/25492.html" target="_blank">13920648617</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    22岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;150<br>天津&nbsp;&nbsp;  &nbsp;&nbsp;中专&nbsp;&nbsp;其他
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=13920648617">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=13920648617&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/25442.html" target="_blank"><img  src=/images/gender_1.gif></a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/25442.html" target="_blank">清茶一杯</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    28岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;170<br>天津&nbsp;&nbsp;  西青&nbsp;&nbsp;本科&nbsp;&nbsp;私企
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=清茶一杯">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=清茶一杯&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/24935.html" target="_blank">
+<img src="/photo/24935_1.png">
+</a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/24935.html" target="_blank">将就很难</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    35岁  &nbsp;&nbsp;离异&nbsp;&nbsp;163<br>天津&nbsp;&nbsp;  东丽&nbsp;&nbsp;本科&nbsp;&nbsp;企管
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=将就很难">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=将就很难&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/24771.html" target="_blank"><img  src=/images/gender_1.gif></a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/24771.html" target="_blank">q396921921</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    23岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;165<br>天津&nbsp;&nbsp;  滨海新区&nbsp;&nbsp;本科&nbsp;&nbsp;IT互联网
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=q396921921">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=q396921921&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/24767.html" target="_blank">
+<img src="/photo/24767_1.jpeg">
+</a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/24767.html" target="_blank">酒妹儿呢</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    22岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;165<br>天津&nbsp;&nbsp;  滨海新区&nbsp;&nbsp;高中&nbsp;&nbsp;学生
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=酒妹儿呢">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=酒妹儿呢&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/24586.html" target="_blank">
+<img src="/photo/24586_1.jpg">
+</a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/24586.html" target="_blank">工地达人</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    48岁  &nbsp;&nbsp;离异&nbsp;&nbsp;170<br>天津&nbsp;&nbsp;  武清&nbsp;&nbsp;小学&nbsp;&nbsp;工人
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=工地达人">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=工地达人&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/24508.html" target="_blank"><img  src=/images/gender_1.gif></a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/24508.html" target="_blank">珍惜另一半</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    36岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;179<br>天津&nbsp;&nbsp;  北辰&nbsp;&nbsp;大专&nbsp;&nbsp;企管
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=珍惜另一半">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=珍惜另一半&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/24470.html" target="_blank"><img  src=/images/gender_2.gif></a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/24470.html" target="_blank">KK姐Kerrie</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    28岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;161<br>天津&nbsp;&nbsp;  滨海新区&nbsp;&nbsp;高中&nbsp;&nbsp;其他
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=KK姐Kerrie">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=KK姐Kerrie&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/24427.html" target="_blank">
+<img src="/photo/24427_1.jpeg">
+</a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/24427.html" target="_blank">李月</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    26岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;156<br>天津&nbsp;&nbsp;  红挢&nbsp;&nbsp;中专&nbsp;&nbsp;工人
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=李月">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=李月&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/24069.html" target="_blank"><img  src=/images/gender_1.gif></a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/24069.html" target="_blank">唔殇</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    29岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;180<br>天津&nbsp;&nbsp;  河西&nbsp;&nbsp;大专&nbsp;&nbsp;工人
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=唔殇">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=唔殇&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	        	  <dl>
+	    <dt><a href="/user/24050.html" target="_blank"><img  src=/images/gender_1.gif></a></dt>
+	    <dd>
+	      <h2>
+		    <a href="/user/24050.html" target="_blank">相遇相识相知</a> 
+					  </h2>
+		  <h3>
+			 <img src="/index_img/cid_h.png" title="实名未认证"><img src="/index_img/email_h.png" title="学历未认证"><img src="/index_img/mobile.png" title="手机已认证">
+		  </h3>
+		  <p>
+		    17岁  &nbsp;&nbsp;未婚&nbsp;&nbsp;176<br>天津&nbsp;&nbsp;  滨海新区&nbsp;&nbsp;初中&nbsp;&nbsp;农民
+		  </p>
+		  <h4>
+		                <span class="_btn2" ><a href="/dis_gbook.asp?username=相遇相识相知">发信件</a></span>
+		    <span class="_btn1"><A href="/friend_hmd.asp?username=相遇相识相知&submitok=friend">关注TA</A></span>
+					  </h4>
+	    </dd>
+	    <div class="clear"></div>
+	  </dl>
+      
+	  	  <div class="clear"></div>
+	      </div>
+	<!--//oe_userlist_layout End-->
+
+  </div>
+    <div class="pagecode" style="margin-bottom:10px;">
+            <img src="/images/index.gif" alt="首页" width="72" height="17" hspace="3" border="0"><img src="/images/pre01.gif" alt="上一页" width="72" height="17" hspace="3" border="0"> 
+            
+            <a href=/fenzhan.asp?Page=2&sheng=天津&shi=&quyu=&s_order=0&s_sex=0><img src="/images/next01.gif" alt="下一页" width="72" height="17" hspace="3" border="0"></a><a href=/fenzhan.asp?Page=4&sheng=天津&shi=&quyu=&s_order=0&s_sex=0><img src="/images/end.gif" alt="尾页" width="72" height="17" hspace="3" border="0"></a> 
+            
+             第 
+            <select class=dh name=select onChange=mychange(value) size="1" style="font-family: 宋体;border:1px solid; font-size: 9pt;color:#333333;">
+              
+              <option value=/fenzhan.asp?Page=1&sheng=%CC%EC%BD%F2&shi=&quyu= selected>1</option>
+              
+              <option value=/fenzhan.asp?Page=2&sheng=%CC%EC%BD%F2&shi=&quyu=>2</option>
+              
+              <option value=/fenzhan.asp?Page=3&sheng=%CC%EC%BD%F2&shi=&quyu=>3</option>
+              
+              <option value=/fenzhan.asp?Page=4&sheng=%CC%EC%BD%F2&shi=&quyu=>4</option>
+              
+            </select>
+          页 
+          <script language=javascript>
+function mychange(v){
+if (v==""){}
+else{
+window.open (v,target="_self")
+}
+}
+</script> 
+
+</div>
+   
+</div>
+</div>
+<div class="oe_footer">
+  <div class="oe_footer_con">
+    <dl class="oe_fc_1">
+      <dt>
+        <h3>关于我们</h3>
+      </dt>
+      <dd> 
+         
+         
+        <a href="/News_show.asp?Classid=21" rel="nofollow">网站介绍</a> 
+         
+      <a href="/News_show.asp?Classid=17" rel="nofollow">联系我们</a></dd>
+    </dl>
+    <dl class="oe_fc_2">
+      <dt>
+        <h3>新手上路</h3>
+      </dt>
+      <dd> 
+         
+         
+        <A href="/News_show.asp?Classid=22" rel="nofollow">免责声明</A>
+        <A href="/News_show.asp?Classid=19" rel="nofollow">交友指南</A>
+         
+      </dd>
+    </dl>
+    <dl class="oe_fc_3">
+      <dt>
+        <h3>帮助中心</h3>
+      </dt>
+      <dd> 
+         
+         
+        <a href="/News_show.asp?Classid=20" rel="nofollow">防骗必看</a> 
+         
+        <a href="/gbook.asp" rel="nofollow">建议留言</a> 
+         
+      </dd>
+    </dl>
+    <div class="clear"></div>
+  </div>
+  <div class="oe_fbottom"  >
+  <div class="oe_fbottomcon">
+  <p> 
+    COPYRIGHT &copy; 2013-2019 <a href="http://www.xiangqinwang.cn"><strong>相亲网</strong></a>www.xiangqinwang.cn 版权所有 
+	  <a href="http://www.beian.miit.gov.cn" target="_blank">浙ICP备17047508号-2</a>	</p>
+	<p><strong>免责声明：本站旨在为各地区单身男女提供<a href="http://www.xiangqinwang.cn" target="_blank">在线相亲</a>的平台，提倡健康征婚相亲，会员线下行为与本站无关！</strong></p>    <p>
+<a target="_blank"><img src="/index_img/buliang.png" /></a>
+<a target="_blank" style="margin-left:8px;"><img src="/index_img/kxrz.png" /></a>
+<a target="_blank" style="margin-left:8px;"><img src="/index_img/aqlm.jpg" /></a>
+<a target="_blank" style="margin-left:8px;" href="http://webscan.360.cn/index/checkwebsite/url/www.baid.com"><img src="/index_img/360.jpg"/></a>
+</p>
+  </div>
+</div>
+</div>
+ 
+ 
+ 
+ 
+
+ 
+<script type='text/javascript'>
+//$(function(){
+	//登录框提示
+	//setTimeout("artbox_loginbox()", 50*1000);
+//});
+</script> 
+<script type="text/javascript" src="/tpl/templets/orange/js/popwin.js"></script>
+<script type="text/javascript">
+reloadView()
+function reloadView(){
+	//$("#pp").html(11);
+            $.ajax({
+                url:'../sub/online_sm_gb.asp',
+                type:'POST',
+                async:true,    //或false,是否异步
+                success:function($result){
+
+
+                    //eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。
+                    //在这里是将String转化为数组形式
+                   // var  $datas= eval($result);  
+$("#pp").html($result);
+
+                  // alert(1);
+                    
+                },
+                error: function (XMLHttpRequest, txtStatus, errorThrown)
+                {
+                    //alert(XMLHttpRequest + "<br>" + txtStatus + "<br>" + errorThrown);
+                }
+            });
+        }
+
+
+        /**
+        *   设置定时执行
+        *   setTimeout(表达式,延时时间)在执行时,是在载入后延迟指定时间后,去执行一次表达式,记住,次数是一次 
+        *   setInterval(表达式,交互时间)则不一样,它从载入后,每隔指定的时间就执行一次表达式 
+        */
+        setInterval('reloadView()',1800000); //每20分钟刷新一次页面下边显示的数据</script>
+
+
+<div id="moquu_wxin" class="moquu_wxin"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=13005691&amp;site=qq&amp;menu=yes&amp;from=message&amp;isappinstalled=0"></a>
+
+  <div class="moquu_wxinh">
+  
+  </div>
+  </a></div>
+    <div id="moquu_wshare" class="moquu_wshare"><a href="javascript:void(0)"> <img class="oe_moq_wei" src="/img/wei.png" alt="相亲网" />
+  <div class="moquu_wshareh">
+    <dl>
+      <dt><img src="images/xiangqin.jpg" alt="相亲网" width="200px" /></dt>
+      <dd>
+        <p><img src="index_img/w_mobile.png" alt="相亲网" /> 手机端</p>
+        <span>微信扫一扫，访问手机端</span> </dd>
+    </dl>
+  </div>
+</a></div>
+  <a id="moquu_top" href="#"></a> 
+
+</body></html>
