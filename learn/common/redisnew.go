@@ -1,10 +1,12 @@
 package common
 
 import (
+	"context"
 	"fmt"
 	"log"
+	"time"
 
-	"github.com/go-redis/redis/v7"
+	"github.com/go-redis/redis/v8"
 )
 
 type RedisConf struct {
@@ -15,6 +17,7 @@ type RedisConf struct {
 }
 
 var pool *redis.Client
+var ctx = context.Background()
 
 // redis初始化
 func InitRedis(redisMsg RedisConf) *redis.Client {
@@ -24,7 +27,7 @@ func InitRedis(redisMsg RedisConf) *redis.Client {
 		Password: redisMsg.Pwd,
 		DB:       redisMsg.DBName,
 	})
-	err := client.Ping().Err()
+	err := client.Ping(ctx).Err()
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -36,48 +39,60 @@ func example() {
 	key := ""
 	value := ""
 	//查询是否有值
-	if !pool.SIsMember(key, value).Val() {
+	if !pool.SIsMember(ctx, key, value).Val() {
 
 	}
 
-	err := pool.Set("waterMark", "value", -1).Err()
+	err := pool.Set(ctx, "waterMark", "value", -1).Err()
 	if err != nil {
 
 	}
 
-	pic := pool.Get("waterMark").Val()
+	//覆盖值 ，如果不存在为设置的值
+	// SET key value EX 10 NX
+	set, err := pool.SetNX(ctx, "key", "value", 10*time.Second).Result()
+
+	// SET key value keepttl NX
+	set, err = pool.SetNX(ctx, "key", "value", redis.KeepTTL).Result()
+
+	fmt.Println(set, err)
+
+	pic := pool.Get(ctx, "waterMark").Val()
 	if pic != "" {
 
 	}
 
 	//删除
-	pool.Del(key)
+	pool.Del(ctx, key)
 	//删除集合中的一个元素
-	pool.SRem(key, value)
+	pool.SRem(ctx, key, value)
 	//添加
-	pool.SAdd(key, value)
+	pool.SAdd(ctx, key, value)
+
+	//删除集合中的一个元素
+	pool.ZRem(ctx, key)
 
 	//也可以获取一个key
-	teamA := pool.HGet(key, value).Val()
+	teamA := pool.HGet(ctx, key, value).Val()
 	if teamA != "" {
 
 	}
 
 	//可以获取集合中某个元素的值
-	pool.HGet(key, value).Val()
+	pool.HGet(ctx, key, value).Val()
 
 	//自增
-	err = pool.Incr(key).Err()
+	err = pool.Incr(ctx, key).Err()
 	if err != nil {
 	}
 
 	//redis事务
 	pipe := pool.TxPipeline()
 	defer pipe.Close()
-	pipe.SAdd("key", "value")
+	pipe.SAdd(ctx, "key", "value")
 
-	pipe.HSet("key", "name", "value")
-    pool.HGet("key", "name").Val()
+	pipe.HSet(ctx, "key", "name", "value")
+	pool.HGet(ctx, "key", "name").Val()
 
 }
 
@@ -89,7 +104,7 @@ func MatchByNickName(nickName string) map[string]string {
 	res := map[string]string{}
 
 	//优先查询redis //存map
-	dMap, err := pool.HMGet(redisKey, "id", "nick_name").Result()
+	dMap, err := pool.HGetAll(ctx, redisKey).Result()
 	if err != nil || len(dMap) < 0 {
 
 		// 查询数据库
@@ -99,23 +114,23 @@ func MatchByNickName(nickName string) map[string]string {
 		// 	return res
 		// }
 
-		val := map[string]interface{}{}
-		val["id"] = ""
-		val["nick_name"] = ""
-		err = pool.HMSet(redisKey, val).Err()
-		if err != nil {
-			return res
-		}
-		
-		//pool.HGet(redisKey, id).Val()
-		dMap, err = pool.HMGet(redisKey, "id", "nick_name").Result()
-		if err != nil {
-			return res
-		}
+		// val := map[string]interface{}{}
+		// val["id"] = ""
+		// val["nick_name"] = ""
+		// err = pool.HMSet(ctx, redisKey, val).Err()
+		// if err != nil {
+		// 	return res
+		// }
+
+		// //pool.HGet(redisKey, id).Val()
+		// dMap, err = pool.HMGet(ctx, redisKey, "id", "nick_name").Result()
+		// if err != nil {
+		// 	return res
+		// }
 	}
 
-	res["id"] = fmt.Sprintf("%v", dMap[0])
-	res["nick_name"] = fmt.Sprintf("%v", dMap[1])
+	// res["id"] = fmt.Sprintf("%v", dMap[0])
+	// res["nick_name"] = fmt.Sprintf("%v", dMap[1])
 
 	return res
 
