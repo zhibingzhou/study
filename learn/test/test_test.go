@@ -37,6 +37,8 @@ func TestRedis(t *testing.T) {
 	})
 	var ctx = context.Background()
 
+	re, err := common.MatchByNickName("hi")
+	fmt.Println(re, err)
 	//map 存储
 	val := map[string]interface{}{}
 	val["id"] = "abc"
@@ -49,7 +51,21 @@ func TestRedis(t *testing.T) {
 	dMap, err := pool.HGetAll(ctx, "im_key2").Result()
 	fmt.Println(dMap, err)
 
-	
+	//集合中添加
+	err = pool.SAdd(ctx, "im_key_123", "test").Err()
+	fmt.Println(err)
+
+	//集合中添加
+	err = pool.SAdd(ctx, "im_key_123", "test1").Err()
+	fmt.Println(err)
+
+	//拿到key在集合中的数量
+	num, err := pool.SCard(ctx, "im_key_123").Result()
+	fmt.Println(num, err)
+
+	//删除一条数据返回被删除的元素
+	result, err := pool.SPop(ctx, "im_key_123").Result()
+	fmt.Println(result, err)
 
 	//拿出有序集合中的0-50的元素
 	valsd, err := pool.ZRange(ctx, "ccc", 0, 50).Result()
@@ -62,8 +78,8 @@ func TestRedis(t *testing.T) {
 
 	//设置最大和最小值  返回有序集合的所有元素和分数
 	vals, err := pool.ZRangeByScoreWithScores(ctx, "ccc", &redis.ZRangeBy{
-		Min: "-inf",
-		Max: "+inf",
+		Min: "0",
+		Max: "50",
 	}).Result()
 
 	fmt.Println(vals, err)
@@ -77,4 +93,33 @@ func TestRedis(t *testing.T) {
 
 	fmt.Println(valss, err)
 
+}
+
+func TestRedisdo(t *testing.T) {
+	common.InitRedis(common.RedisConf{
+		Host:   "127.0.0.1",
+		Port:   "6379",
+		Pwd:    "foobared",
+		DBName: 0,
+	})
+	re, err := common.MatchByNickName("hi")
+	fmt.Println(re, err)
+	re, err = common.MatchByNickName("nihao")
+	fmt.Println(re, err)
+	re, err = common.MatchByNickName("xixi")
+	fmt.Println(re, err)
+	common.Delcash()
+}
+
+func TestRedisZ(t *testing.T) {
+	common.InitRedis(common.RedisConf{
+		Host:   "127.0.0.1",
+		Port:   "6379",
+		Pwd:    "foobared",
+		DBName: 0,
+	})
+	common.PutData("xixi")
+	common.PutData("xiha")
+	common.PutData("ximao")
+	common.Getdata()
 }
