@@ -145,7 +145,7 @@ func Delcash() error {
 	var i int64
 	for i = 0; i < num; i++ {
 
-		//删除一条数据返回被删除的元素
+		//删除一条数据返回被删除的元素，逐个删除，但这个会返回对应元素
 		red_key, err := pool.SPop(ctx, head).Result()
 
 		if err != nil {
