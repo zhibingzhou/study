@@ -12,6 +12,7 @@ import (
 	"os"
 	"regexp"
 	"sort"
+	"strconv"
 
 	// "strconv"
 	"testing"
@@ -36,9 +37,124 @@ type abcd interface {
 
 var workerPool *WorkerPool
 
+/**
+*  光大银行短信解析
+ */
+func cebMsg(content string) (string, string, bool) {
+
+	card_num := ""
+	amount := ""
+	result := false
+	//通过切割，获取尾号信息
+	c_arr := strings.Split(content, "账户")
+	if len(c_arr) > 1 {
+		card_num = common.Substr(c_arr[1], 0, 4)
+		_, err := strconv.Atoi(card_num)
+		if err == nil {
+			result = true
+		}
+	}
+
+	check := []string{"收入"}
+	c_arr1 := []string{}
+	for _, value := range check {
+		c_arr1 = strings.Split(content, value)
+		if len(c_arr1) >= 2 {
+			break
+		}
+	}
+
+	if len(c_arr1) < 2 {
+		return amount, card_num, result
+	}
+
+	allowed := checkagain(check, content)
+
+	if allowed == false {
+		return amount, card_num, result
+	}
+
+	count := strings.Count(content, "元")
+	if count > 1 {
+		return amount, card_num, result
+	}
+
+	//通过元去切割
+	c_arr2 := strings.Split(c_arr1[1], "元")
+	reg := regexp.MustCompile(`[\d]|[.]`) // 查找连续的数字
+	amount_arr := reg.FindAllString(c_arr2[0], -1)
+	if len(amount_arr) < 1 {
+		return amount, card_num, result
+	}
+	for _, a_val := range amount_arr {
+		amount = amount + a_val
+	}
+	return amount, card_num, result
+
+}
+
+func checkagain(c_arry []string, content string) bool {
+
+	result := 0
+
+	for _, value := range c_arry {
+
+		count := strings.Count(content, value)
+
+		if count >= 2 {
+			return false
+		}
+
+		if count >= 1 {
+			result++
+		}
+	}
+
+	if result >= 2 {
+		return false
+	}
+
+	return true
+
+}
+
 func main() {
 
-	shpay()
+	ABCPAY()
+	content := `您的借记卡账户3740，于02月16日网上支付收入人民币49.98元,交易后余额6148.73【`
+	a, b, c := cebMsg(content)
+	fmt.Println(a, b, c)
+	fmt.Println(a, b, c)
+	// Aipay()
+	// shpay()
+
+	// check := []string{"存入", "收入"}
+	// c_arr1 := []string{}
+	// for _, value := range check {
+	// 	c_arr1 = strings.Split(content, value)
+	// 	if len(c_arr1) >= 2 {
+	// 		break
+	// 	}
+	// }
+	// if len(c_arr1) < 2 {
+	// 	return amount, card_num, result
+	// }
+
+	// count := strings.Count(content, "元")
+	// if count > 2 {
+	// 	return amount, card_num, result
+	// }
+
+	// if len(c_arr1) < 2 {
+	// 	return amount, card_num, result
+	// }
+
+	// allowed := checkagain(check, content)
+
+	// if allowed == false {
+	// 	return amount, card_num, result
+	// }
+
 	// lognurl := "https://www.alipay.com/?appId=09999988&actionType=toCard&sourceId=bill&cardNo=621771*****24648&bankAccount=%e9%bb%84%e6%b5%a9&money=300&amount=300&bankMark=CITIC&bankName=%e4%b8%ad%e4%bf%a1%e9%93%b6%e8%a1%8c&cardIndex=&cardNoHidden=true&cardChannel=HISTORY_CARD&orderSource=from"
 
 	// shorurl := GetShorUrl(lognurl, "imkey")

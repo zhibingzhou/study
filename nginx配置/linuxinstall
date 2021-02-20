@@ -1,0 +1,131 @@
+1. yum install lrzsz  没有rz -y 的命令
+
+2. yum -y install wget  安装 wget    
+
+3. https://blog.csdn.net/u010775025/article/details/80340586  解决问题 安装redis
+3.1. https://www.jianshu.com/p/bc84b2b71c1c
+ 
+4. yum install gcc 为了redis   
+
+5. yum -y install vim*
+
+6.数据库
+rpm -e --nodeps mysql-libs-5.1.71-1.el6.x86_64 
+
+https://www.jianshu.com/p/276d59cbc529 //删除旧版mysql
+
+https://cloud.tencent.com/developer/article/1409737
+
+https://blog.csdn.net/u011886447/article/details/89166946 数据库报错解决
+
+https://www.cnblogs.com/linjiqin/p/3544472.html  启动
+
+https://www.cnblogs.com/raicho/p/12511998.html  有用 ,牛逼
+
+msyql 密码：
+xYtRuoT1q5D9C8tW
+
+https://blog.csdn.net/kuluzs/article/details/51924374  mysql 设置
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Eric_191021';
+
+
+node.js 安装
+https://juejin.im/post/6844904176170827789
+报错问题解决
+https://blog.csdn.net/jom_ch/article/details/78738824
+帮大忙了这个帖子
+http://php-note.com/article/1733.html
+
+软连接删除解决办法
+LD_PRELOAD=/lib64/libc-2.12.so ln -s /lib64/libc-2.12.so /lib64/libc.so.6
+
+# 安装编译器 
+yum -y install gcc libffi-devel python-devel openssl-devel wget
+
+GLIBC_2.17 问题
+
+wget -c http://ftp.gnu.org/gnu/glibc/glibc-2.17.tar.gz
+tar -zxvf glibc-2.17.tar.gz
+cd glibc-2.17
+mkdir build
+cd build
+../configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin
+make && make install
+
+
+组件问题
+Error: make: *** No targets specified and no makefile found.  Stop 
+
+问题继续解决
+find / -name "libstdc++.so*
+
+非常有用  ， 大救星
+https://blog.51cto.com/13272050/2119475
+
+终极救星
+https://itbilu.com/linux/management/NymXRUieg.html
+
+如果报错看 https://www.cnblogs.com/wuxie1989/p/5853713.html 扩充内存
+
+cp /usr/local/lib/libstdc++.so.6.0.18 /usr/lib
+ln -s /usr/lib/libstdc++.so.6.0.18 /usr/lib/libstdc++.so.6
+
+cp /usr/local/lib64/libstdc++.so.6.0.18 /usr/lib64
+ln -s /usr/lib/libstdc++.so.6.0.18 /usr/lib/libstdc++.so.6
+
+
+
+
+
+nginx  安装 https://blog.csdn.net/weixin_30034903/article/details/105139815 
+
+nginx 配置 https://wintc.top/article/29
+
+
+45.207.58.223
+
+
+
+http://45.207.58.223
+http://45.207.58.223:8889/test/test.do
+
+curl -d  'pay_id=123' http://127.0.0.1:8889/call/zofpay.do
+
+
+   curl -d  'pay_id=123'  http://45.207.58.223:8889/menu/getMenu
+
+
+location /v1/ {
+      proxy_pass http://127.0.0.1:8889:8889; # 
+  }
+  
+  
+cd /usr/local/redis/bin
+./redis-server redis.conf
+
+/usr/local/nginx/sbin/nginx 
+
+
+http://45.207.58.223:8889/base/login
+
+mysqldump -h localhost -uroot -p pay_db > dump.sql
+
+
+WqyqfEL:y1Wl
+
+
+curl -d  'pay_id=123' http://127.0.0.1:8889/app/notify_app.do
+
+
+
+
+
+firewall-cmd --zone=public --add-port=8889/tcp  
+
+打开制定端口
+
+./nginx -s reload 重启nginx
+
+
+
