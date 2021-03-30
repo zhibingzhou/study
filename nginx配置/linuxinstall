@@ -121,7 +121,7 @@ curl -d  'pay_id=123' http://127.0.0.1:8889/app/notify_app.do
 
 
 
-firewall-cmd --zone=public --add-port=8889/tcp  
+firewall-cmd --zone=public --add-port=80/tcp  
 
 打开制定端口
 

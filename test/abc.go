@@ -3,8 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"strings"
-	"time"
 
 	"gitlab.stagingvip.net/publicGroup/public/common"
 )
@@ -21,55 +19,50 @@ type ABC struct {
 func ABCPAY() (int, string, string, string, string, map[string]string) {
 
 	log_path := ""
-	api_method := "POST"
+	api_method := "post"
 	re_status := 100
 	re_msg := "请求错误"
 	img_url := ""
 
 	api := MDPAY{
-		Notify_url: "http://api.sfwage.com/call/mdpay.do",
-		Pay_url:    "https://api.quickpay123.com/api/pay/create_order",
-		Mer_code:   "20000022",
-		Key:        "RJTYJ3CT7K2MZ2OAIOXHUHCFH3RHIZR1SM4GO0UQJQ3OCRDJNQVALMORT3H4QVJKLDMUGCAUDPD7D6FOJODGAT3MM3KHME3T51OKZC8INYLUQOZ79PIWCJEUWSTIQTXB",
+		Notify_url: "http://www.gjtlzf.com/call/yipay.do",
+		Pay_url:    "http://47.104.151.253/api/createOrder",
+		Mer_code:   "BD91B7E8",
+		Key:        "5EBB0A8D72A34EAF",
 	}
 
 	api_config, _ := json.Marshal(api)
 	fmt.Println(string(api_config))
 
 	p := PayData{
-		Amount:       "50000",
+		Amount:       "500.00",
 		Order_number: "456287234495823112365",
 		Pay_bank:     "PERSONAL_RED_PACK",
 		Ip:           "127.0.0.1",
 	}
 
 	param_form := map[string]string{
-		"mchId":      api.Mer_code,
-		"appId":      "c61b1ac3865b4c2a8adf4c2f8beeaf74",
-		"productId":  "8029",
-		"mchOrderNo": p.Order_number,
-		"notifyUrl":  api.Notify_url,
-		"subject":    "test",
-		"body":       "test",
-		"currency":   "cny",
-		"amount":     p.Amount,
-		"reqTime":    fmt.Sprintf(time.Now().Format("20060102150405")),
-		"version":    "1.0",
+		"business_code": api.Mer_code,
+		"out_trade_no":  p.Order_number,
+		"notify_url":    api.Notify_url,
+		"channel_type":  p.Pay_bank,
+		"goods_name":    "test",
+		"amount":        p.Amount,
 	}
 
 	//拼接
 	result_url := common.MapCreatLinkSort(param_form, "&", true, false)
 	result_url += "&key=" + api.Key
 	sign := common.HexMd5(result_url)
-	param_form["sign"] = strings.ToUpper(sign)
+	param_form["sign"] = sign
 
 	//请求三方接口
 	param := common.MapCreatLinkSort(param_form, "&", true, false)
 
-//	pay_url := fmt.Sprintf("%s/api/gateway/create", api.Pay_url)
+	//	pay_url := fmt.Sprintf("%s/api/gateway/create", api.Pay_url)
 	h_status, msg_b := common.HttpBody(api.Pay_url, api_method, param, http_header)
 	fmt.Println(param)
-	common.LogsWithFileName(log_path, "mdpay_create_", "param->"+param+"\nmsg->"+string(msg_b))
+	common.LogsWithFileName(log_path, "yipay_create_", "param->"+param+"\nmsg->"+string(msg_b))
 	if h_status != 200 {
 		return re_status, re_msg, api_method, img_url, img_url, param_form
 	}
@@ -82,7 +75,7 @@ func ABCPAY() (int, string, string, string, string, map[string]string) {
 		return re_status, re_msg, api_method, img_url, img_url, param_form
 	}
 
-	if fmt.Sprintf("%v", json_res["status"]) != "true" {
+	if fmt.Sprintf("%v", json_res["code"]) != "000000" {
 		re_msg = fmt.Sprintf("%v", json_res["msg"])
 		return re_status, re_msg, api_method, img_url, img_url, param_form
 	}
@@ -92,7 +85,7 @@ func ABCPAY() (int, string, string, string, string, map[string]string) {
 		return re_status, re_msg, api_method, img_url, img_url, param_form
 	}
 
-	img_url = fmt.Sprintf("%v", order_info["url"])
+	img_url = fmt.Sprintf("%v", order_info["order_url"])
 
 	if img_url == "" {
 		re_msg = "接口错误"
