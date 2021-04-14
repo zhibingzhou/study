@@ -1,16 +1,19 @@
 package main
 
 import (
-	"encoding/json"
-	"learn/common"
 	_ "learn/common"
-	"learn/router"
 	"time"
 )
 
 var ratelimit = time.Tick(300 * time.Millisecond)
 
 func main() {
+
+
+
+}
+
+
 
 	// //过程
 	// body, _ := common.Fetch(common.GoUrl + "/tianjin_hexi/")
@@ -24,19 +27,19 @@ func main() {
 	//common.Run("/map.asp")
 	//数据展示
 
-	conf_byte, err := common.ReadFile("./conf/conf.json")
+	// conf_byte, err := common.ReadFile("./conf/conf.json")
 
-	if err != nil {
-		panic(err)
-	}
-	var json_conf map[string]string
-	//解析json格式
-	err = json.Unmarshal(conf_byte, &json_conf)
-	if err != nil {
-		panic(err)
-	}
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// var json_conf map[string]string
+	// //解析json格式
+	// err = json.Unmarshal(conf_byte, &json_conf)
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	router.Router.Run(json_conf["port"])
+	// router.Router.Run(json_conf["port"])
 
 	// //common.KJ()
 	// //common.Baidu()
@@ -131,5 +134,3 @@ func main() {
 	// bot.SendWithExistingVideo(1111640192, "BAACAgQAAx0ESLf3vgABBPMHX6KD3ZVMqit7jJJ24o6_R8KKhmwAAicCAALOtx1RZo0S7q69JGseBA", "xixi")
 
 	// bot.PlayExampleNewBotAPI()
-
-}
