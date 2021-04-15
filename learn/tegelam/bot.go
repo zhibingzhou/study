@@ -18,6 +18,7 @@ import (
 	"time"
 
 	"github.com/technoweenie/multipartstreamer"
+	//"github.com/technoweenie/multipartstreamer"
 )
 
 type HttpClient interface {

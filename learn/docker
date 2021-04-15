@@ -1,0 +1,37 @@
+docker 学习
+
+运行docker HelloWorld
+docker run hello-world
+
+停止容器
+docker stop xxx
+
+拉取docker cloud项目
+docker pull alpine
+
+查看当前运行的 docker
+docker ps
+
+查看全部 docker
+docker ps -a
+
+查看一个docker的信息
+docker inspect alpine
+
+删除一个docker容器
+docker rm xxx
+
+删除运行中的
+docker rm -f xxx
+
+-d 表示后台运行
+docker run -d dockersamples/static-site
+
+docker 服务重启
+sudo service docker restart
+
+查看容器映射端口
+docker port static-site
+
+启动8080 为宿主机端口,80 为容器端口
+docker run -p 8080:80 -d my-nginx
