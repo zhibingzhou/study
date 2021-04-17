@@ -1,5 +1,12 @@
 docker 学习
 
+yum install docker
+
+service docker start
+
+docker 服务重启
+sudo service docker restart
+
 运行docker HelloWorld
 docker run hello-world
 
@@ -27,11 +34,43 @@ docker rm -f xxx
 -d 表示后台运行
 docker run -d dockersamples/static-site
 
-docker 服务重启
-sudo service docker restart
-
 查看容器映射端口
 docker port static-site
 
 启动8080 为宿主机端口,80 为容器端口
 docker run -p 8080:80 -d my-nginx
+
+拷贝文件到nginx 容器里面 
+docker cp docker.html f35c5a28dacc://usr/share/nginx/html
+
+创建镜像
+docker commit -m 'create my nginx image' f35c5a28dacc my-nginx
+
+打包容器到镜像
+docker save -o my-nginx.tar my-nginx
+
+引用镜像，可以直接启动
+docker load --input my-nginx.tar
+
+//mysql 容器 拉镜像
+sudo docker pull mysql
+
+//运行mysql容器
+sudo docker run --name firt-mysql -p 3306:3306 -e MYSQL\_ROOT\_PASSWORD=Eric_191021 -d mysql
+
+
+//redis  拉镜像
+docker pull redis:latest
+
+运行redis容器
+docker run -d --name myredis -p 6378:6379 redis --requirepass "foobared"
+
+
+//创建程序镜像
+docker build -t newchat:V1.0 -f Dockerfile .
+
+//启动容器
+docker run --name newchat-test -d -p 8888:8888 newchat:V1.0
+
+//查看容器的文件目录
+docker exec 容器name ls
