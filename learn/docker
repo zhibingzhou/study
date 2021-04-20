@@ -74,3 +74,9 @@ docker run --name newchat-test -d -p 8888:8888 newchat:V1.0
 
 //查看容器的文件目录
 docker exec 容器name ls
+
+//查看容器日志 最后10行日志
+sudo docker logs -f -t --tail 10 b3c30222ecc2
+
+//进入容器
+docker exec -it firt-mysql bash
