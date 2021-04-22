@@ -6,7 +6,6 @@ import (
 	"log"
 
 	"github.com/streadway/amqp"
-
 )
 
 const MQURL = "amqp://zhou:123@127.0.0.1:5672/zhou" //amqp:// 账号 : 密码 @ 连接生产者、消费者的端口 /verhost name
@@ -22,6 +21,8 @@ type RabbitMQ struct {
 }
 
 func NewRabbitMQ(QueueName, Exchange, key string) *RabbitMQ {
+	MQURL := fmt.Sprintf("amqp://%s:%s@%s:%d/%s", Sys.RabbitMq.Admin, Sys.RabbitMq.Pwd, Sys.RabbitMq.Ip, Sys.RabbitMq.Port, Sys.RabbitMq.Verhost)
+	fmt.Println(MQURL)
 	rabbitmq := RabbitMQ{QueueName: QueueName, Exchange: Exchange, Key: key, Mqurl: MQURL}
 	var err error
 	//先连接

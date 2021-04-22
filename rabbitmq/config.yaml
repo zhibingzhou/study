@@ -3,4 +3,4 @@ rabbitMq:
   pwd: '123456'
   port: 5672
   ip : '127.0.0.1'
-  verhost : 'zhou'
+  verhost : 'konwen'
