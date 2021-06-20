@@ -6,6 +6,8 @@ require (
 	github.com/PuerkitoBio/goquery v1.6.0
 	github.com/axgle/mahonia v0.0.0-20180208002826-3358181d7394
 	github.com/boombuler/barcode v1.0.0 // indirect
+	github.com/chromedp/cdproto v0.0.0-20210429002609-5ec2b0624aec
+	github.com/chromedp/chromedp v0.7.1
 	github.com/crawlab-team/crawlab-go-sdk v0.3.3
 	github.com/garyburd/redigo v1.6.2 // indirect
 	github.com/gin-gonic/gin v1.6.3
@@ -22,4 +24,6 @@ require (
 	github.com/tuotoo/qrcode v0.0.0-20190222102259-ac9c44189bf2 // indirect
 	github.com/zhibingzhou/go_public v0.0.0-20200805064216-dfc0c825ff4d
 	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
+	golang.org/x/text v0.3.3
+	google.golang.org/genproto v0.0.0-20200526211855-cb27e3aa2013
 )

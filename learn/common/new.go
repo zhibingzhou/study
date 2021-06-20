@@ -158,3 +158,17 @@ func merinfo(Gourl string) []map[string]interface{} {
 
 	return data
 }
+
+// func RuoaiGet(url string) {
+// 	Info, _ = Fetch(url)
+
+// 	dom, err := goquery.NewDocumentFromReader(strings.NewReader(string(Info)))
+// 	if err != nil {
+// 		fmt.Println("ParseMerInfoList  ", err.Error())
+// 	}
+
+// 	dom.Find(".nickname").Each(func(i int, selection *goquery.Selection) {
+
+// 	})
+
+// }

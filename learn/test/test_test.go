@@ -2,8 +2,10 @@ package test
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"learn/common"
+	"sync"
 	"testing"
 
 	"github.com/axgle/mahonia"
@@ -122,4 +124,59 @@ func TestRedisZ(t *testing.T) {
 	common.PutData("xiha")
 	common.PutData("ximao")
 	common.Getdata()
+}
+
+type Student struct {
+	Name string
+	Age  int
+}
+
+var pool *sync.Pool
+
+func BenchmarkUnmarshal(t *testing.B) {
+	var buf []byte
+	for n := 0; n < t.N; n++ {
+		stu := &Student{}
+		json.Unmarshal(buf, stu)
+	}
+}
+
+func InitPool() {
+	pool = &sync.Pool{
+		New: func() interface{} {
+			return new(Student)
+		},
+	}
+}
+
+func BenchmarkUnmarshalWithPool(b *testing.B) {
+	var buf []byte
+	for n := 0; n < b.N; n++ {
+		stu := pool.Get().(*Student)
+		json.Unmarshal(buf, stu)
+		pool.Put(stu)
+	}
+}
+
+func TestChange(t *testing.T) {
+	var abc []int
+	abc = append(abc, 1)
+	abc = append(abc, 2)
+	abc = append(abc, 3)
+	abc = append(abc, 4)
+
+	fmt.Println(abc)
+
+	fmt.Println(abc[0:])
+
+	fmt.Println(abc[1:])
+
+	copy(abc[0:], abc[1:])
+
+	fmt.Println(abc)
+
+	abc = abc[:len(abc)-1]
+
+	fmt.Println(abc)
+
 }
