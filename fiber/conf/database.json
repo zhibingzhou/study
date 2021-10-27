@@ -1,0 +1,12 @@
+{
+	"network": "tcp",
+	"host": "127.0.0.1",
+	"port": "3306",
+	"user": "root",
+	"pwd": "Eric_191021",
+	"db_name": "upload",
+	"life_time": "+3s",
+	"max_open": 100,
+	"max_idle": 10,
+	"show_log": true
+}
