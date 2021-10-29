@@ -5,6 +5,7 @@ import "studyfiber/api"
 func AdminRouterInit() {
 	var admin_historyrouter = api.ApiGroupApp.AdminApiGroup.FileHistory
 	Router.Post("/admin/del_history.do", admin_historyrouter.HistoryDel)
+	Router.Post("/admin/check_filename.do", admin_historyrouter.CheckFileName)
 }
 
 func TestRouterInit() {

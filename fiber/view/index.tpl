@@ -32,5 +32,26 @@
 </table>
 </form>
 
+
+<p>查询加密名对应文件上传文件名<br/>POST<br/>/admin/check_filename.do</p>
+<form method="post" action="/admin/check_filename.do">
+<table border="1" cellspacing="0" cellpadding="0">
+<tr>
+<th>参数名</th>
+<th>传值</th>
+<th>备注说明</th>
+</tr>
+</tr>
+<tr align="center">
+<td>filename</td>
+<td><input type="text" name="filename"></td>
+<td>要查询的加密字串</td>
+</tr>
+<tr align="center">
+<td colspan="3"><input type="submit" value="提交"></td>
+</tr>
+</table>
+</form>
+
 </body>
 </html>

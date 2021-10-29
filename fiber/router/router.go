@@ -2,6 +2,7 @@ package router
 
 import (
 	"studyfiber/api"
+	"studyfiber/middleware"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -13,7 +14,8 @@ func init() {
 	Router = fiber.New()
 	var test_Hellorouter = api.ApiGroupApp.TestApiGroup.HelloWorldApi
 	// 路由：/ hello world
-	Router.Get("/", test_Hellorouter.World)
+	index := Router.Group("/").Use(middleware.Check)
+	index.Get("/", test_Hellorouter.World)
 
 	AdminRouterInit()
 	TestRouterInit()

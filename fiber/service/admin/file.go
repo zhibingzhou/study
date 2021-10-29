@@ -43,3 +43,18 @@ func (f *FileHistory) HistoryDel(filename, password string, c *fiber.Ctx) error 
 
 	return response.Ok(c)
 }
+
+func (f *FileHistory) CheckFileName(chunk_number string, c *fiber.Ctx) error {
+	sim := model.ExaSimpleUploader{}
+	err := model.Gdb.DB.Where("chunk_number = ?", chunk_number).First(&sim).Error
+	if err != nil {
+		if err == gorm.ErrRecordNotFound {
+			return response.FailWithMessage("未找到文件", c)
+
+		}
+		return response.FailWithMessage("查询错误", c)
+
+	}
+
+	return response.OkWithMessage(chunk_number+" ___对应文件名：  "+sim.Filename, c)
+}

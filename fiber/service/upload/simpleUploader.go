@@ -114,6 +114,7 @@ func (s *SimpleUploader) MergeFileMd5(md5 string, fileName string) (err error) {
 			IsDone:     true,
 			FilePath:   finishDir + fileName,
 			Filename:   fileName,
+			ChunkNumber: postmap["title"],
 		}
 		// 添加文件信息
 		if err = tx.Create(&data).Error; err != nil {
